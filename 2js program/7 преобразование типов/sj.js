@@ -28,5 +28,66 @@ console.log(typeof(String(4433)));//преобразование в строко
  console.log(Boolean(1));//преобразование в логический тип
  console.log(typeof(Boolean(1)));
 
- console.log(!!5)// !! - логическое
- console.log(!!0)
+ console.log(!!5);// !! - логическое быстрое преобразование в логический тип //true
+ console.log(!!0);                                                           //false
+ console.log(typeof(345 + ""));//оперативное строковое преобразование //string
+ console.log(typeof + "454");// оперативное унарное преобразование //number
+ 
+ var number = 22;
+ console.log(typeof number.toString());
+ number = 45;
+ console.log(number.toString(2)); //переводит в другую систему счисления и преобразует в строковую переменную
+ console.log(number.toString(8));
+ console.log(number.toString(10));
+ console.log( typeof number.toString(16));
+
+ console.log(typeof false.toString());//string
+
+
+console.log(parseInt("45 px",10));//выводит цифры//10-основание системы счисления
+console.log(parseInt("45.22 px",10));//выводит цифры//10-основание системы счисления
+console.log(parseFloat("12.45 em"));//выводит вещественные  цифры
+console.log(parseFloat("122 12.45 eв  m"));//выводит цифры
+console.log(typeof Infinity);//number
+console.log( typeof String(Infinity));//переводит number в string
+
+console.log(typeof(NaN));//number
+console.log(typeof String(NaN));//now string
+console.log(typeof(NaN));//now again number
+
+console.log(+"");//0
+
+console.log(!!"");//false
+console.log(!!NaN);//f
+console.log(!!0);//f
+console.log(!!null);//f
+console.log(!!undefined);//f 
+
+console.log(!!"Hi");
+
+var P4;
+
+console.log( P4 =" 49 i");
+console.log(typeof P4);
+console.log(parseInt("49 i"))//обязательно первым должны быть числа или же оператор выведет "NaN";
+P4 = parseInt(P4);
+console.log(P4);
+   
+console.log(+true);//переводит булинговые значения в унарные
+console.log(+false);//
+
+var n = 5;
+console.log(n.value);//переменная n была преобразованна в объект 
+console.log(n);
+n = "hello";
+console.log(n.value);   
+console.log(n);
+// n = null;
+// console.log(n.value);  //typeError 
+
+ 
+
+
+
+
+
