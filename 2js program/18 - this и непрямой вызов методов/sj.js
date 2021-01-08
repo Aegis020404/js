@@ -40,7 +40,7 @@ console.log(person3.greet3("hi"));
 
 
 console.log(person3.greet3.call(person2 ,"Bonjour"))//
-console.log(person3.greet3.apply(person2 ,["Bonjour"]));//передаётся не через запятую , а массивом
+console.log(person3.greet3.apply(person ,["Bonjour"]));//передаётся не через запятую , а массивом
 
 
 var bound = greet2.bind(person3);//связывает функцию с каким-нибудь объектом
