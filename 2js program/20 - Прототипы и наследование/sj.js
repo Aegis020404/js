@@ -80,18 +80,18 @@ thirdPerson = Object.create(Person).constructor("Steve",24,"male");
  console.log(Person.isPrototypeOf(person));//является ли объект прототипом другого объкта  //true
 
 
- var webDeveloper = Object.create(Person);
-  webDeveloper.constructor = function(name,age,gender,skills){
+ var WebDeveloper = Object.create(Person);
+  WebDeveloper.constructor = function(name,age,gender,skills){
       Person.constructor.apply(this , arguments);
       this.skills = skills || [];
       return this;
   }
-  var developer = Object.create(webDeveloper).constructor("jack",21,"male",["css","js","php", "mysql","html"]);
+  var developer = Object.create(WebDeveloper).constructor("jack",21,"male",["css","js","php", "mysql","html"]);
 
   console.log(developer);   
   console.log(developer.skills);   
   
-  webDeveloper.develop = function(){
+  WebDeveloper.develop = function(){
       console.log("Working...");
   }
   developer.develop();
