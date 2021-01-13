@@ -6,6 +6,7 @@ console.log("Another \"very long \" string")
 //конкантинация сложение строк
 
 var string = "Sometimes the same is different";
+console.log("\n",string,"\n\n");
 console.log(string.charAt(2));//возвращает символ под определённым индексом
 console.log(string.charAt(string.length - 1));//мини команда);
 
