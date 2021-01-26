@@ -30,3 +30,4 @@ func();
      console.log(i);  
  };
  func();
+ 

@@ -36,7 +36,7 @@ console.log(a);
 
 var someString = "Non-empty string";
 var newString = someString || "Default String";//"Default String" ||  someString ;
-console.log(newString)//выведет истинное значение
+console.log(newString)//выведет истинное значение 1вое
 
 
 

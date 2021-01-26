@@ -9,7 +9,7 @@ function greet(name) {//функция
     return "Hello " + name;
 }
 
-console.log(temp);//undefined так как мы их не оозначали
+console.log(temp);//undefined так как мы их не назначали
 console.log(obj.property);//undefined
 console.log(a[4]);//undefined
 

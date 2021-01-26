@@ -1,7 +1,7 @@
 // if (выражение) инструкция
 
 if(true) console.log("Its true");//так как инструкция истинна , поэтому выполняется
-if(false) console.log("Its true");//так как инструкция ложная , поэтому не выполняется
+if(false) console.log("Itsn't true");//так как инструкция ложная , поэтому не выполняется
 
 var n = 5;
 if (n > 3) {
@@ -22,7 +22,7 @@ else{
 
 var a =1;
 
-if (a > 1) {;
+if (a > 1) {
     console.log(">");
 }
 else if(a = 1){//    иначе если
