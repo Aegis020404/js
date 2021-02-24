@@ -50,7 +50,7 @@
 
 
 
-=// // months.length = 5 //все индексы выше 5 были удалены 
+// // months.length = 5 //все индексы выше 5 были удалены 
 // // console.log(months)
 
 
@@ -111,7 +111,7 @@
 // arr.forEach(function (item, index) {
 //         console.log(index,item );
 //     }); //интериррование по массиву
-_/+Э.0ьт
+
 // let arr =['Vanya','Ishvan','Olya',]
 
 // let result = arr.map (function(item,index,array){
