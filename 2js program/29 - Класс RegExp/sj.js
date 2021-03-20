@@ -1,9 +1,10 @@
+'strict mode'
 var pattern = new RegExp("\w+","gim" );//(строкак которая содежрит регулярное значение, строка которая содержит флаги)
 var samePattern = /\w+/gim;//литерал регулярных выражений
 
-
+let strings = "How we survive  is what  makes us who  we are";
 var pattern = /\w+/g ,
-    string = "How we survive  is what  makes us who  we are";
+  string=strings
 
 console.log(pattern)
 console.log(string.match(pattern));//возвращает массив

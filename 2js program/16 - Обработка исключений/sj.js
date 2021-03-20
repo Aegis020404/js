@@ -18,7 +18,7 @@ var calculate = function(n) {
     }
      
 }
-console.log(calculate(7)());
+// console.log(calculate(7)());
 
 // try{
 //     инструкции
@@ -30,8 +30,23 @@ console.log(calculate(7)());
 //     инструкции
 // }
 
+// try{
+//     calculate(20);
+// }   catch (e) {
+//     console.log("Can't execute calculate: "+ e.message);
+// }
 try{
-    calculate(20);
-}   catch (e) {
-    console.log("Can't execute calculate: "+ e.message);
-}
+let age = prompt('Введите возраст');
+let pattern =/[1-9]/g,
+  CheckAge =age;
+  if (!(pattern.test(age))) {
+    throw new SyntaxError('Вы даже не ввели числа')
+  };
+  alert(age)}
+// catch(err) {
+//  alert('Понятно. ' + err.message);
+// }//НАКОНЕЦ
+finally{
+  console.log("Ну ладно")
+  setTimeout(console.clear,5000)
+};
