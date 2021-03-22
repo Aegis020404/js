@@ -9,13 +9,13 @@
       idElemSelector = document.querySelector('#four')
 
 
-  // console.log( elems,'\n1')//nodeList
-  // console.log( classElems,'\n2')//nodeList
-  // console.log( idElems,'\n3')//nodeList
-  // console.log( elemSelector)//nodeList
-  // console.log( elemsSelectorAll)//nodeList
-  // console.log( elemsInDiv)//nodeList
-  // console.log( idElemSelector)//nodeList
+  console.log( elems,'\n1')//nodeList
+  console.log( classElems,'\n2')//nodeList
+  console.log( idElems,'\n3')//nodeList
+  console.log( elemSelector)//nodeList
+  console.log( elemsSelectorAll)//nodeList
+  console.log( elemsInDiv)//nodeList
+  console.log( idElemSelector)//nodeList
 //обычно используют способ getElement так как он более быстрый
 
 
