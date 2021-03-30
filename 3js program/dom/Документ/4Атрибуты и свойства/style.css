@@ -1,0 +1,16 @@
+p{
+    margin:0;
+    padding: 4vh;
+    height:2vw;
+    background-color: rgb(250, 212, 212);
+    
+}
+a{
+    display:block;
+
+}
+
+/* стили зависят от пользовательского атрибута */
+.order[order-state="new"]{color:springgreen}
+.order[order-state="pending"]{color:steelblue}
+.order[order-state="canceled"]{color:maroon}

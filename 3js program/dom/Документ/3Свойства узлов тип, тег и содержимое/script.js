@@ -41,14 +41,64 @@ console.log(document.nodeName);//#document
 // Свойство innerHTML позволяет получить HTML-содержимое элемента в виде строки.
 
 console.log(document.body.innerHTML);//читаем текущее содержимое
-document.body.innerHTML = ("New Body "+
-"<p>I Hate myself</p>")//заменяем содержимое
+// document.body.innerHTML = ("New Body "+
+// "<p>I Hate myself</p>")//заменяем содержимое
 
 document.body.innerHTML += "Как дела?"//+= чтобы не было перезаписи
 
 
 // Свойство outerHTML содержит HTML элемента целиком. Это как innerHTML плюс сам элемент.
 
-console.log(elem.outerHTML)
-//БЛЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯТЬ 
-//БЛЯТЬ СУКА
+console.log(elem.outerHTML);//выведет всё что внутри Body
+console.log(elem.innerHTML);//выведет всё что внутри body и его самого
+
+let div = document.querySelector('div');
+console.log(div)
+// Заменяем div.outerHTML на <p>...</p>
+div.outerHTML = "<p>Новый элемент</p>";
+
+console.log(div.outerHTML)//<div>Привет мир</div> содержимое осталось тем же
+// Это потому, что использование outerHTML не изменяет DOM-элемент, а удаляет его из внешнего контекста и вставляет вместо него новый HTML-код.
+let p = document.querySelectorAll("p");
+console.log(p[0].innerHTML);//Paragraph
+console.log(p[1].innerHTML);//Новый элемент
+console.log(p[0].outerHTML)//<p>Paragraph</p>
+
+// nodeValue/data: содержимое текстового узла
+
+// Свойство innerHTML есть только у узлов-элементов.
+
+let text = document.body.firstChild;
+console.log(text.data)//как inner для текстого узла
+
+let comment = text.nextSibling;
+console.log(comment.data)//как inner для  узла-комментария
+
+
+// textContent: просто текст
+// Свойство textContent предоставляет доступ к тексту внутри элемента за вычетом всех <тегов>.
+
+console.log(news.textContent);//возвращает весь тескт без тегов
+elem1.innerHTML = "<b>Винни-пух!</b>";
+elem2.textContent = "<b>Винни-пух!</b>";
+
+// Свойство «hidden»
+
+nHidden.hidden = true;//теперь элемент с таким индексом станенет невидивым
+
+//Мигающий элемент:
+
+setInterval(()=>{ blink.hidden = !blink.hidden
+},1000)
+
+// Другие свойства
+// У DOM-элементов есть дополнительные свойства, в частности, зависящие от класса:
+
+// value – значение для <input>, <select> и <textarea> (HTMLInputElement, HTMLSelectElement…).
+// href – адрес ссылки «href» для <a href="..."> (HTMLAnchorElement).
+// id – значение атрибута «id» для всех элементов (HTMLElement).
+// …и многие другие…
+
+console.log(inputElem.type);//text
+console.log(inputElem.id);//inputElem
+console.log(inputElem.value);//значение
