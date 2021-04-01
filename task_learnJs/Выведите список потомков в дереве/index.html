@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Животные
+          <ul>
+            <li>Млекопитающие
+              <ul>
+                <li>Коровы</li>
+                <li>Ослы</li>
+                <li>Собаки</li>
+                <li>Тигры</li>
+              </ul>
+            </li>
+            <li>Другие
+              <ul>
+                <li>Змеи</li>
+                <li>Птицы</li>
+                <li>Ящерицы</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Рыбы
+          <ul>
+            <li>Аквариумные
+              <ul>
+                <li>Гуппи</li>
+                <li>Скалярии</li>
+              </ul>
+            </li>
+            <li>Морские
+              <ul>
+                <li>Морская форель</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    
+      <script>
+         let lis = document.getElementsByTagName('li');
+
+         for (let li of lis) {
+             //Получить колличество <li> ниде жтого <li>
+                let descendantsCount = li.getElementsByTagName('li').length
+                if(!descendantsCount) continue//continue Прекращает текущую итерацию цикла и продолжает выполнение со следующей итерации тоесть при случае [0]
+
+                // Добавить непосредственно к текстовому узлу (добавить к тексту)
+
+                li.firstChild.data += '[' + descendantsCount + ']';
+
+         }
+      </script>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
