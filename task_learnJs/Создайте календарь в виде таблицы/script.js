@@ -22,7 +22,7 @@ function createCalendar(elem,year,month) {
 
         d.setDate(d.getDate()+1);
     }
-
+    console.log(d.getMonth())
     //добить таблицу пустыми ячейками ,если нужно
     //29 30 31 * * * *
     if(getDay(d)!=0){
@@ -39,6 +39,7 @@ function createCalendar(elem,year,month) {
 function getDay(date) {//получить номер дня недели , от 0 (пн) до 6 (вс)
     let day =date.getDay();
     if(day == 0) day = 7 ;// сделать воскресенье (0) последним днём 
+
     return day -1;
 
 }
