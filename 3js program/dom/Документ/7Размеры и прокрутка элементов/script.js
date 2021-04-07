@@ -1,4 +1,3 @@
-
 // offsetParent , offsetLeft/Top
 
 // В свойстве offsetParent находится предок элемента, который используется внутри браузера для вычисления координат при рендеринге.
@@ -56,8 +55,31 @@ console.log(getComputedStyle(example).width)//300px
 // Все свойства доступны только для чтения, кроме scrollLeft/scrollTop, изменение которых заставляет браузер прокручивать элемент.
 
 
+let i=0
+let randomHEX 
+setInterval(()=>{
+    p.append(example.scrollTop+ ' ');
+    randomHEX = Math.round(Math.random()*1000000)
+    p.style.color='#'+randomHEX
+    p.style.background='#'+Math.round(Math.random()*1000000)
+},1000)
 
-example.scrollTop = 50
+
+example.scrollTop = 1
+
 console.log(example.scrollTop)
-setInterval(()=>p.append(example.scrollTop+ ' '),1000)
+function topScroll(){
+    if(i==130) return botScroll()
+    example.scrollTop =i++;
+    example.style.color="#FF2400"
+    setTimeout(topScroll,4)
+}
+function botScroll(){
+    if(i==0) return topScroll()
+    example.scrollTop =--i;
+    example.style.color="#78DBE2"
+    setTimeout(botScroll,4)
+    
+} 
 
+topScroll();
