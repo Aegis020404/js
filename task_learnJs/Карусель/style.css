@@ -41,18 +41,36 @@
 ul li {
     display: inline-block;  
      position:relative;
-    
+
   } 
   li{
     position:relative;
-
+    transition: 1s all;
   }
   .gallery{
-    border: 2px solid gray;
     background-color: silver;
     border-radius: 10px;
     width:390px;
-    margin: 100px;
+    
     overflow: hidden;
-
+    display:inline-block;
+  }
+  .arrow{
+    display:inline-block;
+    margin-bottom:10px;
+    position: relative;
+    bottom:35%;
+  }
+  .carousel{
+    margin: 1em;
+    background-color: silver;
+    border-radius: 10px;
+    width:450px;
+    height:140px;
+    border: 2px solid gray;
+    
+  }
+  .qwerty{
+    border:1px solid silver;
+    transition: 1s all;
   }

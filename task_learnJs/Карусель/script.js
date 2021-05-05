@@ -8,20 +8,23 @@ for(let li of document.querySelectorAll('li')) {
 let n=0
 function getNext () {
   n+=390
+  qwerty.style.marginLeft=`${n}px`;
   for(let li of document.querySelectorAll('li')) {
     
     
-    li.style.left=`${n}px`
+    
+    li.style.left=`${n}px`;
   }
 }
- arrowNext.addEventListener('click',getNext)
+arrowNext.addEventListener('click',getNext)
 
  function getPrevious () {
    n-=390
+   qwerty.style.marginLeft=`${n}px`;
    for(let li of document.querySelectorAll('li')) {
      
      
-     li.style.left=`${n}px`
+     li.style.left=`${n}px`;
    }
  }
 
