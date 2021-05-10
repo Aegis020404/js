@@ -1,0 +1,6 @@
+span:hover {
+    font-size: 1.1em;
+    font-weight: bolder;
+    cursor:pointer;
+    transition:0.1s all;
+}

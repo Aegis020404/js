@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -8,8 +8,19 @@
     <title>Document</title>
 </head>
 <body>
+      <a href="/" onclick="return false">Нажми здесь</a>
+      или
+      <a href="/" onclick="event.preventDefault()">Здесь</a>
+      <ul id="menu" class="menu">
+          <li><a href="/html">HTML</a></li>
+          <li><a href="/javascript">javascript</a></li>
+          <li><a href="/css">CSS</a></li>
+      </ul>
+      <input type="text" value="Фокус работает" >
+      <input type="text" value="Кликни меня" onmousedown='return false' >
       
-
+      <button>Правый клик вызывает контекстное меню браузера</button>
+      <button oncontextmenu="alert('Рисуем наше меню');return false">Правый клик вызывает контекстное меню браузера</button>
     <script src="script.js"></script>
 </body>
 </html>
