@@ -1,0 +1,12 @@
+#ball{
+    cursor:pointer;
+}
+body{
+    height:1000px;
+}
+#gate {
+    cursor: pointer;
+    margin-bottom: 190px;
+    width: 83px;
+    height: 46px;
+  }
