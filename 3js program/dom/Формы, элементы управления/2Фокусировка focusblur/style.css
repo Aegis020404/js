@@ -1,0 +1,15 @@
+.invalid { border-color: red; }
+#error { color: red }
+
+li{
+    cursor:poiner;
+}
+li:focus{
+    outline:1px dashed green;
+}
+.focused{
+    outline:1px solid blue;
+};
+input{
+    outline: none;
+}

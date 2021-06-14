@@ -1,4 +1,4 @@
-document.addEventListener('mousedown',function(event){
+document.addEventListener('pointerdown',function(event){
    event.preventDefault();
     if (event.target.className=='draggable'|| event.target.className=='hero draggable'){
         let shiftX=event.clientX-event.target.getBoundingClientRect().left;
@@ -29,18 +29,18 @@ document.addEventListener('mousedown',function(event){
             // if(event.target.top)
         };
         
-        function onMouseMove(event) {
+        function onpointerMove(event) {
             moveAt(event.pageX,event.pageY);
       
          
 
 
         };
-        document.addEventListener('mousemove',onMouseMove);
+        document.addEventListener('pointermove',onpointerMove);
 
-        document.onmouseup=function() {
-            document.removeEventListener('mousemove',onMouseMove);
-            event.target.onmouseup=null;
+        document.onpointerup=function() {
+            document.removeEventListener('pointermove',onpointerMove);
+            event.target.onpointerup=null;
         }
        
     }

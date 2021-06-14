@@ -1,0 +1,6 @@
+#mouse{
+    display: inline-block;
+    width:100px;
+    height:200px;
+    position: relative;
+}
