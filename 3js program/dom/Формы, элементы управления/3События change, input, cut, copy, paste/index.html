@@ -8,7 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-      
+      <input type="text" onchange="console.log(this.value)">
+        <select name=""onchange="console.log(this.value)" id="">
+            <option value="">Выберите что-нибудь</option>
+            <option value="1">Вариант 1</option>
+            <option value="2">Вариант 2</option>
+            <option value="3">Вариант 3</option>
+        </select>
+
+        <input type="text" id="input">oninput <span id="result"></span>
+
+        <input type="text" id="notCopy">
 
     <script src="script.js"></script>
 </body>
