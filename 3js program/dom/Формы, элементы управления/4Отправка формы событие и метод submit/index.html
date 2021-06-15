@@ -8,7 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-      
+      <form action="" onsubmit="console.log('submit');return false"> 
+        <!-- Форма не отправится благодаря return false -->
+        Первый пример: нажмите Enter: <input type="text" value="Текст"><br>
+  Второй пример: нажмите на кнопку "Отправить": <input type="submit" value="Отправить" onclick="console.log('click')">
+    </form>
 
     <script src="script.js"></script>
 </body>
