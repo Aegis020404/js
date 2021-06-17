@@ -10,9 +10,11 @@ form.onsubmit=function(){
 
     let promptForm=document.getElementById('prompt-form');
     promptForm.onsubmit = function (e) {
+        if(!(promptForm.elements.text.value=="")) {
+            showPrompt(promptForm.elements.text.value,call);
+        }
+        if(promptForm.elements.text.value=="") return false;
 
-        showPrompt(promptForm.elements.text.value,call);
-  
     }
     document.onkeydown=function(e){
         if(e.code =="Escape") {
@@ -37,3 +39,4 @@ function showPrompt(html,callback) {
     return callback(html);
 
 }
+
