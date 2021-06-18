@@ -8,8 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-      
+    <p>...содержимое перед скриптом...</p>
 
+    <script defer src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+    
+    <!-- Это не отобразится, пока скрипт не загрузится -->
+    <p>...содержимое после скрипта...</p>
+<!-- Типичное подключение скрипта Google Analytics -->
+<script async src="https://google-analytics.com/analytics.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

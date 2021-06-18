@@ -22,10 +22,21 @@ function ready() {
   document.addEventListener("DOMContentLoaded", ready);
   window.onload = function() {
     console.log('Страница загружена');
-
     // к этому моменту страница загружена
     console.log(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
   };
+  if(document.readySate=='complete'){
+    console.log("DOM and styles complete")
+  }
+img.ondragstart=function() {
+  return false
+}
+
+
+
+
+
+
 //   В этом примере обработчик DOMContentLoaded запустится, когда документ загрузится, так что он увидит все элементы, включая расположенный ниже <img>.
 // Но он не дожидается, пока загрузится изображение. Поэтому alert покажет нулевой размер.
 // На первый взгляд событие DOMContentLoaded очень простое. DOM-дерево готово – получаем событие. Хотя тут есть несколько особенностей.
