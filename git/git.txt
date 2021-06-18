@@ -1,0 +1,7 @@
+// для перехода - cd/путь...
+// создать репозиторий                      - git init
+// зафиксировать имя                        - git config --global user.name "Name"
+// зафиксировать почту                      - git config --global user.email NameMeko@gmail.com
+// посмотретреть конфигурацию               - git config
+// показывает в какой стадии находится git  - git status
+// чтобы записать репозитрий                - git commit
