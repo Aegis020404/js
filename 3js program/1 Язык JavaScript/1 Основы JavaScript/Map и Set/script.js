@@ -62,9 +62,9 @@ let prices = Object.fromEntries([
 ]);
 console.log(prices.orange);
 let map2 = new Map();
-map.set('banana', 1);
-map.set('orange', 2);
-map.set('meat', 4);
+map2.set('banana', 1);
+map2.set('orange', 2);
+map2.set('meat', 4);
 
 let obj1 = Object.fromEntries(map2.entries()); // make a plain object (*)
 
