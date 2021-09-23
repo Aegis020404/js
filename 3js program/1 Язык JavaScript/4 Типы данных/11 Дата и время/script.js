@@ -99,14 +99,47 @@
 
 
 
-// Какой день месяца был много дней назад?
+// Последнее число месяца?
     
-    date = new Date( 2015, 0, 1 );
+    function getLastDayOfMonth(year, month) {
+        let date = new Date( year, month + 1 ,0 );
+        console.log(date)
+        return date.getDate();
+    }
 
-    function getDateAgo( date, days) {
-        let residual = new Date(date);
-        residual.setDate(residual.getDate() - days);
-        return residual.getDate();
-    };
-console.log( getDateAgo(date, 2) );
+    getLastDayOfMonth(2020, 1);//31
 
+
+
+// Сколько сегодня прошло секунд?
+    function getSecondsToday() {
+        date = new Date();
+
+
+        return date.getSeconds() + date.getMinutes()*60 + date.getHours()*3600;
+    }
+    console.log(getSecondsToday())
+
+
+// Форматирование относительной даты
+
+function formatDate(date) {
+    let nowDate = new Date()
+    let del = date - nowDate;
+
+    let answer = del > -1000 ? 'прямо сейчас' : del > -60000 ? `${del/-1000} сек. назад` : del > -3600000 ? `${del/-60000} мин. назад` : `${'0'+date.getDate()}.${'0'+(+date.getMonth()+1)}.${date.getFullYear()%100} ${date.getHours()}:${date.getMinutes()}`
+    return answer;
+}
+
+
+console.log( formatDate(new Date(new Date - 1)) );
+console.log( formatDate(new Date(new Date - 30 * 1000)));
+console.log( formatDate(new Date(new Date - 5 * 60 * 1000)) );
+console.log( formatDate(new Date(new Date - 86400 * 1000)) );
+console.log(formatDate(new Date(2014, 2, 1, 11, 22, 33) ) ) ;
+
+
+
+console.log(new Date(2014, 2, 1, 11, 22, 33))
+
+  
