@@ -65,8 +65,7 @@
     };
 
 let rabbit = new Rabbit();
+rabbit.__proto__ = null
 console.log( rabbit );
-delete Rabbit.prototype.eats
-
-console.log( rabbit); // ?
+console.log( rabbit.eats); // ?
 }
