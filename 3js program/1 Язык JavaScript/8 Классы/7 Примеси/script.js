@@ -70,14 +70,15 @@
         // menu.off('select', handler)
 
         off(eventName, handler) {
-            let handlers = this.eventHandlers && this._eventHandlers[eventName];
+            let handlers = this._eventHandlers && this._eventHandlers[eventName];
             if (!handlers) return;
-            for (let i = 0; i < handler.length; i++) {
-                if(handlers[i] === handler) {
-                    handlers.splice(i--, 1)
-                } 
+            for (let i = 0; i < handlers.length; i++) {
+                console.log(i)
+              if (handlers[i] === handler) {
+                handlers.splice(i--, 1);
+              }
             }
-        },
+          },
     
 
     // Сгенерировать событие с указанным имменем и данными
@@ -116,12 +117,20 @@
     let menu = new Menu();
 
     // Добавить обработчик который будет вызван при событии select
-    menu.on('select', value => console.log(`Выбранное значение ${value}`));
+    menu.on('select', selF);
+    function selF (value) { 
+        console.log(`Выбранное значение ${value}`);
+    }
     menu.on('forTest', value =>console.log(`It's working ${value}`));
     // Генерирует событие => обработчик выше запускает и выводит:
 
             // menu.choose('123'); //Выбранное значение: 123
             // menu.choose('123'); //Выбранное значение: 123
 
-    menu.trigger('select', 123)
+    menu.trigger('select', 123);
+    menu.trigger('forTest', 123);
+    menu.off('select', selF)
+    menu.trigger('select', 123);
+
+
     
