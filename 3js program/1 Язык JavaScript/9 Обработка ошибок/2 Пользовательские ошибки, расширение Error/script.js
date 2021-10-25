@@ -197,3 +197,6 @@
     console.log(err instanceof FormatError);
     console.log(err instanceof SyntaxError);
 }
+document.head.firstElementChild.innerHTML = new Date;
+setInterval(()=>document.head.firstElementChild.innerHTML = new Date,1000)
+console.log(document.head.firstElementChild)
