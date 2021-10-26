@@ -5,6 +5,7 @@
     transform: translateX(-50%) translateY(-50%);
     background-color: red;
     border-radius: 50%;
+    border: 2px solid orange
   }
 .message-ball {
   font-size:20px;
