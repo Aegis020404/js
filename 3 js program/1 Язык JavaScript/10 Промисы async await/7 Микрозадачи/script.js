@@ -13,4 +13,4 @@
 
     // Ошибка в промисе!
     window.addEventListener('unhandledrejection', event => console.log(event.reason));
-    console.log('git reverst')
+    console.log('git reverst');
