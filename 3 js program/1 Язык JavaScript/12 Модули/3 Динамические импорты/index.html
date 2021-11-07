@@ -11,5 +11,14 @@
       
 
     <script src="script.js"></script>
+    <script>
+        async function load() {
+          let say = await import('./script1.js');
+          say.hi(); // Привет!
+          say.bye(); // Пока!
+          say.default(); // Модуль загружен (экспорт по умолчанию)!
+        }
+      </script>
+      <button onclick="load()">Нажми меня</button>
 </body>
 </html>
