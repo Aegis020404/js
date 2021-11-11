@@ -1,5 +1,5 @@
 let greeting = "Привет, как тебя зовут";
-let  name = prompt(greeting);
+let name = prompt(greeting);
 
 
     while (name == "" || name == null) {
