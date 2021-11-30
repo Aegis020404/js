@@ -1,32 +1,30 @@
-let i = 1;
-for(let li of document.querySelectorAll('li')) {
-  li.style.position = 'relative';
-  li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
-  i++;
-
+let lis = ul.querySelectorAll('li').length - 3;
+console.log(lis)
+next.onclick = function() {
+  if(lis > 3) {
+    lis -=3
+  ul.style.marginLeft = parseInt(getComputedStyle(ul).marginLeft) - 390 + 'px'
+} else if(lis == 2) {
+    lis -=2
+    ul.style.marginLeft = parseInt(getComputedStyle(ul).marginLeft) - 230 + 'px'
+} else if(lis == 1) {
+    lis -=1
+    ul.style.marginLeft = parseInt(getComputedStyle(ul).marginLeft) - 130 + 'px'
 }
-let n=0
-function getNext () {
-  n+=390
-  qwerty.style.marginLeft=`${n}px`;
-  for(let li of document.querySelectorAll('li')) {
-    
-    
-    
-    li.style.left=`${n}px`;
-  }
+
+
+  // console.log(getComputedStyle(ul).width)
+  // console.log(parseInt(getComputedStyle(ul).marginLeft))
 }
-arrowNext.addEventListener('click',getNext)
+prev.onclick = function() {
+  if(lis < 7) {
+    lis +=3
+    ul.style.marginLeft = parseInt(getComputedStyle(ul).marginLeft) + 360 + 'px'
+  } 
+    
 
- function getPrevious () {
-   n-=390
-   qwerty.style.marginLeft=`${n}px`;
-   for(let li of document.querySelectorAll('li')) {
-     
-     
-     li.style.left=`${n}px`;
-   }
- }
 
- arrowPrevious.addEventListener('click',getPrevious)
- 
+
+
+  // console.log(parseInt(getComputedStyle(ul).marginLeft))
+}

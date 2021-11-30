@@ -99,6 +99,9 @@ setInterval(()=>{ blink.hidden = !blink.hidden
 // id – значение атрибута «id» для всех элементов (HTMLElement).
 // …и многие другие…
 
-console.log(inputElem.type);//text
-console.log(inputElem.id);//inputElem
-console.log(inputElem.value);//значение
+
+
+
+
+
+

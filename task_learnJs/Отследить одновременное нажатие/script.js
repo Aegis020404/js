@@ -1,29 +1,22 @@
-function runOnKeys(func,...codes) {
-    let pressed = new Set();
+let setDown = new Set(),
+    setUp = new Set();
+let i = 0;
+document.onkeydown = function(e) {
+    setDown.add(e.code);
+    console.log(e.code)
+    if(setDown.has('KeyQ') && setDown.has('KeyW')) {
+        setUp.clear();
+        i = i < 3 ? i : 0;
+        document.body.style.background = ['red','blue','green'][i++]
+    }
+    document.onkeyup = (e) => {
+        setUp.add(e.code);
+        if(setUp.has('KeyQ') && setUp.has('KeyW')){
+            setDown.clear();
+        }
 
-    document.addEventListener('keydown',function(event) {
-        pressed.add(event.code);
-        
-        for (let code of codes){// все ли клавиши нажаты?
-        
-        if(!pressed.has(code)){
-            return;
-        }}
-         // да, все
+    }
+}
 
-        // во время показа alert, если посетитель отпустит клавиши - не возникнет keyup
-        // при этом JavaScript "пропустит" факт отпускания клавиш, а pressed[keyCode] останется true
-        // чтобы избежать "залипания" клавиши -- обнуляем статус всех клавиш, пусть нажимает всё заново
-        pressed.clear();
-        func();
-    });
 
-    document.addEventListener('keyup',function(event){
-        pressed.delete(event.code);
-        document.body.style.color="black";
-    });
-};
-function redColor(){
-    document.body.style.color="red";
-};
-runOnKeys(redColor,'KeyQ','KeyW');
+

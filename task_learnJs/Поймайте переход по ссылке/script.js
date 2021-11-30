@@ -1,10 +1,5 @@
-for(a of document.getElementsByTagName('a')){
-    a.onclick=function(){
-        console.log('a')
-        let question =confirm('leave for '+a.href+' ?')
-        if(!question) return false;
-        
-    }
-}
-
- 
+contents.addEventListener('click',function(e) {
+    if(!e.target.closest('A')) return
+    let question = confirm(`Leave for ${e.target.closest('A').href}`)
+    question ? undefined : e.preventDefault()
+})

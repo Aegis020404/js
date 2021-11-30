@@ -1,16 +1,14 @@
-for (li of document.getElementsByTagName('li')){
-    let span = document.createElement('span');
-    
+for(let li of tree.querySelectorAll('li')) {
+    let span = document.createElement('span')
+    span.append(li.firstChild)
     li.prepend(span)
-    span.append(span.nextSibling)
 }
-document.addEventListener('click',function(event){
-    if(event.target.tagName == 'SPAN') {
-      
-        if (event.target.nextElementSibling !== null) { 
-        let ul =event.target.nextElementSibling;
-        ul.hidden=!ul.hidden;
-    }
-    
-    }
+
+
+tree.addEventListener('click',function(e) {
+    if(e.target.tagName !== 'SPAN') return
+
+    if(!e.target.nextElementSibling) return;
+    console.log(e.target.nextElementSibling)
+    e.target.nextElementSibling.hidden = !e.target.nextElementSibling.hidden 
 })

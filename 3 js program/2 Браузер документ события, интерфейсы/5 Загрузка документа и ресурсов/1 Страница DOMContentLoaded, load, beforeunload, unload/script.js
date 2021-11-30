@@ -85,3 +85,17 @@ if (document.readyState == 'loading') {
 }
 // document.readyState станет interactive прямо перед DOMContentLoaded. Эти две вещи, на самом деле, обозначают одно и то же.
 // document.readyState станет complete, когда все ресурсы (iframe и img) загрузятся. Здесь мы видим, что это произойдёт примерно в одно время с img.onload (img последний ресурс) и window.onload. Переключение на состояние complete означает то же самое, что и window.onload. Разница заключается в том, что window.onload всегда срабатывает после всех load других обработчиков.
+
+
+let eventCtrl = new KeyboardEvent("keydown", {
+  code: 'ControlLeft'
+});
+let eventW = new KeyboardEvent("keydown", {
+  code: 'KeyW'
+});
+window.addEventListener('keydown',function(e) {
+  console.log(e.code)
+  document.body.innerHTML +=  ` ${e.code}`
+})
+window.dispatchEvent(eventCtrl)
+window.dispatchEvent(eventW)

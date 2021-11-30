@@ -1,76 +1,57 @@
 .arrow {
-    padding: 0;
-    background: #ddd;
-    border-radius: 15px;
-    border: 1px solid gray;
-    font-size: 24px;
-    line-height: 24px;
-    color: #444;
-    display: block;
-  }
-  
-  .arrow:focus {
-    outline: none;
-  }
-  
-  .arrow:hover {
-    background: #ccc;
-    cursor: pointer;
-  }
-  
-  ul {
-    height: 130px;
-    width: 9999px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 0;
-  }
-  
-  ul img {
-    width: 130px;
-    height: 130px;
-    display: block; /* убираем пустое место вокруг картинок */
-  }
-  
-@keyframes left {
-  0%  { left: 0;}
-  100% { left: 130px;  }
+  padding: 0;
+  background: #ddd;
+  border-radius: 15px;
+  border: 1px solid gray;
+  font-size: 24px;
+  color: #444;
+  display: inline-block;
+  position: relative;
+  bottom:50px;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.arrow:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+ul {
+  position: relative;
+  height: 130px;
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+  transition: .5s all;
+}
+
+ul img {
+  margin: 0;
+  width: 130px;
+  height: 130px;
+  display: inline-block; /* убираем пустое место вокруг картинок */
 }
 
 ul li {
-    display: inline-block;  
-     position:relative;
+  display: inline-block; /* убираем пустое место между элементами списка */
+}
+.container {
+  width: 390px;
+  display: inline-block;
+  overflow: hidden;
+  
+  
+}
+.wrap {
+  width:460px;
+  height: 140px;
+  border-radius: 30px;
+  background:linear-gradient(rgb(187, 187, 187),white);
+  border: 2px gray solid;
 
-  } 
-  li{
-    position:relative;
-    transition: 1s all;
-  }
-  .gallery{
-    background-color: silver;
-    border-radius: 10px;
-    width:390px;
-    
-    overflow: hidden;
-    display:inline-block;
-  }
-  .arrow{
-    display:inline-block;
-    margin-bottom:10px;
-    position: relative;
-    bottom:35%;
-  }
-  .carousel{
-    margin: 1em;
-    background-color: silver;
-    border-radius: 10px;
-    width:450px;
-    height:140px;
-    border: 2px solid gray;
-    
-  }
-  .qwerty{
-    border:1px solid silver;
-    transition: 1s all;
-  }
+}

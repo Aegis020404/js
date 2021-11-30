@@ -1,16 +1,6 @@
-let i=0
-openList.onclick=function() {
-    
-    if(i==0) {
-        i++;
-        openList.innerHTML=" ▶ Сладости (нажми меня)!"
-        ul.innerHTML =`<li>Пирожное</li>
-        <li>Пончик</li>
-        <li>Мёд</li>`
-    }
-    else if(i==1){
-        i--;
-        openList.innerHTML=" ▼ Сладости (нажми меня)!"
-        ul.innerHTML =``
-    }
+
+openList.onclick = function () {
+    // ul.hidden = ul.hidden ? false : true
+    ul.style.top = parseInt(getComputedStyle(ul).top) ? 0 : `-100px`
+    openList.innerHTML = parseInt(getComputedStyle(ul).top) ?  '▼ Сладости (нажми меня)!' : '| ▶  Сладости (нажми меня)' 
 }

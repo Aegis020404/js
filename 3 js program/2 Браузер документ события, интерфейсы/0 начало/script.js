@@ -38,3 +38,4 @@
   // setTimeout(() => document.body.style.background = "",3000) - пример способностей дом
   
  
+console.log(location)

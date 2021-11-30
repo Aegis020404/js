@@ -1,4 +1,4 @@
 body{
-    min-height: 4000px;
-    background:-webkit-linear-gradient(gray,white)
+    min-height: 30000px;
+    background:linear-gradient(gray,white,red);
 }

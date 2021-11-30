@@ -1,9 +1,6 @@
-
-thumbs.addEventListener('click',function(event){
-    if (event.target.parentElement.tagName =='A'){
-        let a=event.target.parentElement
-        event.preventDefault();
-        console.log(a);
-        largeImg.src=a.href
-    }
+thumbs.addEventListener('click', function (e) {
+    let link = e.target.closest('A')
+    if (!link) return
+    e.preventDefault();
+    largeImg.src = link.href
 })

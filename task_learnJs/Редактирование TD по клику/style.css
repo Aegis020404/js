@@ -1,16 +1,26 @@
-/* общие стили для таблицы, изменять их не нужно */
-
+.btn {
+  position: absolute;
+  z-index: 100;
+}
+.edit {
+  resize:none;
+  padding:0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 th {
   text-align: center;
   font-weight: bold;
 }
 
 td {
+  margin: 0; 
   width: 150px;
   white-space: nowrap;
   text-align: center;
   vertical-align: middle;
-  padding: 10px;
+   padding: 10px;
 }
 
 .nw {
@@ -53,23 +63,4 @@ td {
 .se {
   background-color: #0c3;
   color: #fff;
-}
-textarea {
-    border: none;
-    margin: 0;
-    padding: 0;
-    display: block;
-    height:150px;
-    /* отключаем изменение размера мышью в Firefox */
-    resize: none;
-    font-size: .8em;;
-    /* удаляем обводку при фокусировке в Chrome */
-    outline: none;
-  
-    /* удаляем полосу прокрутки в IE */
-    overflow: auto;
-  }
-  
-.btnSave,.btnCancel{
-    position:relative;
 }

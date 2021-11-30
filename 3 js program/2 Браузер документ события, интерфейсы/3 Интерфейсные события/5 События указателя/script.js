@@ -66,3 +66,8 @@
 // автоматически, при возникновении события pointerup или pointercancel,
 // автоматически, если elem удаляется из документа,
 // при вызове elem.releasePointerCapture(pointerId).
+
+
+window.addEventListener('scroll', function(e) {
+    document.body.firstElementChild.innerHTML = ~~pageYOffset +'px'
+})

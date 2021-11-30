@@ -61,10 +61,68 @@ console.log(document.documentElement.parentElement)//null
 
 console.clear()
 
-//task 1 
-console.log(document.body.lastElementChild.previousElementSibling);//div
-console.log(document.body.firstElementChild)//ul
-console.log(document.body.firstElementChild.lastElementChild)//li пит
+// // 1
+//     console.log(document.body.firstElementChild)
+//     console.log(document.body.firstElementChild.nextElementSibling)
+//     console.log(document.body.firstElementChild.nextElementSibling.lastElementChild)
+
+
+
+
+
+
+
+// let table = document.body.firstElementChild;
+//     for(let i = 0; table.rows.length > i;i++) {
+//       table.rows[i].cells[i].style.background = 'red';
+//     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //task 1 
+// console.log(document.body.lastElementChild.previousElementSibling);//div
+// console.log(document.body.firstElementChild)//ul
+// console.log(document.body.firstElementChild.lastElementChild)//li пит
 
 
 

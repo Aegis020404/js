@@ -45,21 +45,6 @@
         </li>
       </ul>
     
-      <script>
-         let lis = document.getElementsByTagName('li');
-
-         for (let li of lis) {
-             //Получить колличество <li> ниде жтого <li>
-                let descendantsCount = li.getElementsByTagName('li').length
-                if(!descendantsCount) continue//continue Прекращает текущую итерацию цикла и продолжает выполнение со следующей итерации тоесть при случае [0]
-
-                // Добавить непосредственно к текстовому узлу (добавить к тексту)
-
-                li.firstChild.data += '[' + descendantsCount + ']';
-
-         }
-      </script>
-    
 
     <script src="script.js"></script>
 </body>

@@ -1,6 +1,5 @@
-document.addEventListener('click',function(event){
-    if(event.target.getElementsByClassName('remove-button') != undefined) {
-        event.target.parentNode.style.display="none"
+container.addEventListener('click',function(e) {
+    if(e.target.dataset.remove !=undefined) {
+        e.target.parentElement.hidden = true
     }
-
 })

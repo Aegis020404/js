@@ -1,21 +1,6 @@
-let pane = document.getElementsByClassName('pane')
-console.log(pane)
-for(block of pane){
-    block.innerHTML+='<button class="remove-button">[x]</button>';
-    block.style.position="relative"
+for(let pane of document.querySelectorAll('.pane')) {
+    pane.innerHTML+='<button class="remove-button">[x]</button>'
+    pane.querySelector('.remove-button').onclick = function(e) {
+        e.currentTarget.parentElement.hidden = true;
+    }
 }
-let removeButton = document.getElementsByClassName('remove-button')
-console.log(removeButton);
-for(item of removeButton){
-    item.style.cssText=`
-    position:absolute;
-    right:2%;
-    top:0em;
-    `;
-    item.addEventListener('click',removeBlock)
-}
-function removeBlock () {
-    this.parentElement.style.display="none"
-}
-
-

@@ -1,21 +1,11 @@
-let selectedLi
-ul.addEventListener('click',function(e){
-    let element=e.target;
-    if((e.ctrlKey || e.metaKey) && (element.tagName == "LI")){
-        element.classList.add('selected');
-        return;
+ul.addEventListener('click',function(e) {
+    if(e.target.tagName !== 'LI') return
+    if(e.ctrlKey){
+         e.target.classList.toggle('selected');
+         return;
     }
-    if (element.tagName == "LI") {
-        select(element)
-        }
+    for(li of ul.querySelectorAll('li')) li.classList.remove('selected')
     
-    function select(li) {
-        for(li2 of document.getElementsByTagName('li')){
-            li2.classList.remove('selected')
-        }
-        selectedLi = li;
-        selectedLi.classList.add('selected');
-    }
+    e.target.classList.add('selected');
 
-
-})
+});

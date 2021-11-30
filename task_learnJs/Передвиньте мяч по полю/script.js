@@ -1,32 +1,37 @@
-field.onclick = function (event) {
+field.addEventListener('click',function(e) {
+    ballLeft = e.clientX  - field.clientLeft - ball.offsetWidth/2 - field.offsetLeft +'px';
+    ballTop = e.clientY  - field.clientTop - ball.offsetHeight/2 - field.offsetTop +'px';
+    console.log(`${e.clientX}:${e.clientY}`);
 
-    // координаты поля относительно окна браузера 
-    let fieldCoords = this.getBoundingClientRect();
-    // мяч имеет абсолютное позиционирование (position:absolute), поле - относительное (position:relative)
-    // таким образом, координаты мяча рассчитываются относительно внутреннего, верхнего левого угла поля
-    let ballCoords = {
-        top:event.clientY -fieldCoords.top - field.clientTop - ball.clientHeight/2,
-        left:event.clientX - fieldCoords.left - field.clientLeft - ball.clientWidth/2,
-    };
 
-    // Запрещаем пересекать границы поля 
-    if(ballCoords.top<0) ballCoords.top=0;//сверху
-    if(ballCoords.left<0) ballCoords.left=0;//cлева
-    if(ballCoords.left + ball.clientWidth > field.clientWidth) {
-        ballCoords.left = field.clientWidth - ball.clientWidth;
-    };
-    if(ballCoords.top +ball.clientHeight > field.clientHeight) {
-        ballCoords.top = field.clientHeight - ball.clientHeight;
+
+    if(e.clientX - field.offsetLeft - field.clientLeft < ball.offsetWidth/2) {
+        ball.style.left ='0px'
+    } else if(e.clientX - field.offsetLeft - field.clientLeft > field.offsetWidth - ball.offsetWidth) {
+        ball.style.left = field.offsetWidth - ball.offsetWidth - field.clientLeft*2+ 'px'
+    } else {
+        ball.style.left = ballLeft
+    }
+    if(e.clientY - field.offsetTop - field.clientTop < ball.offsetHeight/2) {
+        ball.style.top ='0px'
+    } else if(e.clientY - field.offsetTop - field.clientTop > field.offsetHeight - ball.offsetHeight) {
+        ball.style.top = field.offsetHeight - ball.offsetHeight - field.clientTop*2+ 'px'
+    }
+    
+    
+    else {
+        ball.style.top = ballTop
     }
 
-    console.log(fieldCoords.top)
-    console.log(fieldCoords.left)
-    ball.style.left = ballCoords.left + 'px'
-    ball.style.top = ballCoords.top + 'px'
-}
 
 
 
+    console.log(e.clientX - field.offsetLeft - field.clientLeft > field.offsetWidth - ball.offsetWidth)
+    console.log(e.clientX - field.offsetLeft - field.clientLeft)
+
+
+
+})
 
 
 

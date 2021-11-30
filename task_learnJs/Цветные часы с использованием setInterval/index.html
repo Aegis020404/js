@@ -9,9 +9,39 @@
 </head>
 <body>
       <div id='time'>
-          <span id ="hours"></span><span id ="minutes"></span><span id ="seconds"></span>
+          <span id ="hours">hh</span>:<span id ="minutes">mm</span>:<span id ="seconds">ss</span>
         </div>
+  <!-- клик по этой кнопке вызовет clockStart() -->
+  <input type="button" onclick="clockStart()" value="Старт">
 
+  <!-- клик по этой кнопке вызовет clockStop() -->
+  <input type="button" onclick="clockStop()" value="Стоп">
+  <ul id="ul">
+    <li id="one">1</li>
+    <li id="two">4</li>
+  </ul>
+  <table id="table">
+    <tr>
+      <th>Имя</th>
+      <th>Фамилия</th>
+      <th>Возраст</th>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>Smith</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Pete</td>
+      <td>Brown</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>Ann</td>
+      <td>Lee</td>
+      <td>5</td>
+    </tr>
+  </table>
     <script src="script.js"></script>
 </body>
 </html>

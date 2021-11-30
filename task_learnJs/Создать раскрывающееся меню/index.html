@@ -6,13 +6,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      ul {
+        transition:.5s;
+        position: relative;
+        top:-100px;
+      }
+      .container {
+        margin: 0;
+        padding: 0;
+        /* height: 100px;
+        width: 100px; */
+        overflow: hidden;
+      }
+    </style>
 </head>
 <body> 
     <span id="openList"> ▼ Сладости (нажми меня)!</span>
-  <ul id="ul">
-   
-  </ul> 
-
+    <div class = 'container'>
+      <ul id="ul" >
+        <li>Пирожное</li>
+        <li>Пончик</li>
+        <li>Мёд</li>
+      </ul> 
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

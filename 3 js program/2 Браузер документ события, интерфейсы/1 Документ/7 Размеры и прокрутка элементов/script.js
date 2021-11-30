@@ -72,14 +72,27 @@ function topScroll(){
     if(i==130) return botScroll()
     example.scrollTop =i++;
     example.style.color="#FF2400"
-    setTimeout(topScroll,4)
+    setTimeout(topScroll,10)
 }
 function botScroll(){
     if(i==0) return topScroll()
     example.scrollTop =--i;
     example.style.color="#78DBE2"
-    setTimeout(botScroll,4)
+    setTimeout(botScroll,10)
     
 } 
 
-topScroll();
+// topScroll();
+
+
+function scrollBottom(elem) {
+    console.log(elem.scrollBar)
+    return elem.scrollHeight - elem.scrollTop - elem.clientHeight
+}
+function scrollBar(elem) {
+    return elem.offsetWidth - elem.clientWidth - elem.clientLeft
+}
+
+
+console.log(scrollBottom(example))
+console.log(scrollBar(example))

@@ -1,26 +1,14 @@
-let area=null;
-let view= document.getElementById('view');
-view.onclick = function() {
-    editStart();
-};
-function editStart() {
-    area = document.createElement('textarea');
-    area.className = 'edit';
-    area.value=view.innerHTML;
+let view = document.querySelector('#view')
+view.addEventListener('focus',function() {
+    let edit = document.createElement('textarea');
+    edit.className = 'edit';
+    edit.value = view.innerHTML
+    view.replaceWith(edit)
+    edit.focus();
 
-    area.onkeydown = function(e) {
-        if(e.key == "Enter") {
-            this.blur();
-        }
-    }
+    edit.addEventListener('blur', function () {
+        view.innerHTML = edit.value;
+        edit.replaceWith(view)
+    });
+});
 
-area.onblur = function(){
-    editEnd();
-};
-view.replaceWith(area);
-area.focus();
-};
-function editEnd() {
-    view.innerHTML = area.value;
-    area.replaceWith(view);
-  }

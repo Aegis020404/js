@@ -1,51 +1,48 @@
-let check =1;
-let area =null;
-let table = document.getElementById('bagua-table');
-table.addEventListener('click',function(event){
-    if(check==0) return
-    let target = event.target.closest('TD');
+let data = document.getElementById('bagua-table');
+let text
+let selected = false;
+data.onclick = function(e) {
+    if(selected || e.target.tagName == 'BUTTON') return 
+    selected = true;
+    let td = e.target.closest('td');
+    text = td.innerHTML
+    editTd(td)
+}
 
-    if( target.tagName=='TD'){
-        
-        console.log('qwe')
-        if(!(target==area)){
-        editStart(target);
-    }
-    }
+function editTd(td) {
+    td.style.position = 'relative'
+    let edit = document.createElement('textarea');
+    edit.classList.add('edit')
+    edit.style.height = td.offsetHeight + 'px' 
+    edit.style.width = td.offsetWidth + 'px'  
+    edit.value = text
+    td.append(edit)
     
-})
 
-function editStart(target) {
-    check=0
-    area = document.createElement('textarea');
-    area.value=target.innerHTML;
-    target.replaceWith(area)
-    console.log(target.tagName)
-    let btnSave = document.createElement('button');
-    btnSave.innerHTML ="OK"
-    btnSave.className="btnSave";
-    document.body.prepend(btnSave);
-    btnSave.style.top=area.getBoundingClientRect().bottom+'px'
-    btnSave.style.left=area.getBoundingClientRect().left+'px'
-    btnSave.onclick=function() {
-        target.innerHTML=area.value;
-        area.replaceWith(target);
-        btnSave.remove();
-        btnCancel.remove();
-        check=1
+    btnOk = document.createElement('button');
+    btnOk.innerHTML = 'OK';
+    btnOk.className = 'btn';
+    btnOk.style.top = btnOk.offsetHeight + td.offsetHeight +'px';
+    btnOk.style.left = 0;
+    td.append(btnOk)
+
+    btnOk.onclick = function() {
+           td.innerHTML = edit.value;
+           edit.replaceWith();
+           selected = false;
     }
-    let btnCancel =document.createElement('button');
-    btnCancel.innerHTML ="CANCEL"
-    btnCancel.className="btnCancel";
-    document.body.prepend(btnCancel);
-    btnCancel.style.top=area.getBoundingClientRect().bottom+'px'
-    btnCancel.style.left=area.getBoundingClientRect().left+'px'
-    btnCancel.onclick=function() {
-        area.replaceWith(target);
-        btnSave.remove();
-        btnCancel.remove();
-        check=1
-    }
-};
+        
+        
+    btnCancel = document.createElement('button');
+    btnCancel.innerHTML = 'CANCEL';
+    btnCancel.className = 'btn';
+    btnCancel.style.top = btnCancel.offsetHeight + td.offsetHeight +'px';
+    btnCancel.style.left = btnOk.offsetWidth +'px';
+    td.append(btnCancel)
 
-
+    btnCancel.onclick = function() {
+        td.innerHTML = text;
+        edit.replaceWith();
+        selected = false;
+ }
+}

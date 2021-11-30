@@ -1,16 +1,11 @@
-let form = document.forms.calculator;
-let months = form.elements.months;
-let initial = form.elements.money;
-let interest = form.elements.interest;
-
-form.oninput=function(){
-    let result =Math.round(initial.value * (1 + interest.value/100  * months.value/12 ));
-    console.log(result)
-    height_after.style.height=result/100+"px"
+let diag = document.getElementById('height-after')
+let before = document.getElementById('money-before');
+let after = document.getElementById('money-after');
+let calc = document.forms.calculator
+calc.oninput = function(e) {
+    before.innerHTML = calc[0].value;
+    let result = Math.round(calc[0].value * (1 + calc[2].value/100) ** (calc[1].value/12))
+    console.log(result/(calc[0].value/100) )
+    after.innerHTML = result;
+    diag.style.height = result/(calc[0].value/100)+ 'px'
 }
-
-
-3412
-4231
-2143
-1324

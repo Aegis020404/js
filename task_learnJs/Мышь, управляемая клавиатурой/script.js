@@ -1,28 +1,16 @@
-mouse.addEventListener('focus',function() {
-    mouse.addEventListener('keydown',function(event){
-        console.log(event.code)
-        let mouseStyle = getComputedStyle(mouse)
-        if(event.code == "ArrowRight"){
-       
-            mouse.style.left=parseInt(mouseStyle.left)+mouse.getBoundingClientRect().width+'px'
-        }
-        if(event.code == "ArrowLeft"){
-           
-            mouse.style.left=parseInt(mouseStyle.left)-mouse.getBoundingClientRect().width+'px'
-        }
-        if(event.code == "ArrowUp"){
-            
-            mouse.style.top=parseInt(mouseStyle.top)-mouse.getBoundingClientRect().height+'px'
-        }
-        if(event.code == "ArrowDown"){
-            
-            mouse.style.top=parseInt(mouseStyle.top)+mouse.getBoundingClientRect().height+'px'
+mouse.onfocus = function(e) {
+    console.log('qwe')
+    e.target.style.border = '1px dashed'
+    mouse.addEventListener('keydown', function(e) {
+        switch (e.code) {
+            case 'ArrowUp': this.style.top =parseInt(getComputedStyle(this).top) - this.offsetHeight + 'px'
+                break;
+            case 'ArrowDown': this.style.top =parseInt(getComputedStyle(this).top) + this.offsetHeight + 'px'
+                break;
+            case 'ArrowLeft': this.style.left =parseInt(getComputedStyle(this).left) - this.offsetWidth + 'px'
+                break;
+            case 'ArrowRight': this.style.left =parseInt(getComputedStyle(this).left) + this.offsetWidth + 'px'
         }
     })
-})
-
-
-    // ArrowLeft
-    // ArrowUp
-    // ArrowRight
-    // ArrowDown  
+} 
+mouse.onblur = (e) => e.target.style.border = 'none'

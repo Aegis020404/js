@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    
-    
-  <div class="carousel">
-    <button class="arrow"id="arrowPrevious">⇦</button>
-  <div class="gallery">
-    <ul>
+    <div class="wrap">
+  <button class="arrow" id='prev'>⇦</button>
+  <div class="container">
+    <ul id='ul'>
       <li><img src="https://ru.js.cx/carousel/1.png"></li>
       <li><img src="https://ru.js.cx/carousel/2.png"></li>
       <li><img src="https://ru.js.cx/carousel/3.png"></li>
@@ -26,9 +24,21 @@
       <li><img src="https://ru.js.cx/carousel/10.png"></li>
     </ul>
   </div>
-   <button class="arrow"id="arrowNext">⇨</button>
-  </div>
-  <p class="qwerty" id="qwerty">qwerty</p>
+  <button class="arrow" id='next'>⇨</button>
+</div>
+
+  <script>
+    // отметить картинки для удобства разработки
+    // этот код может быть удалён по вашему усмотрению
+    let i = 1;
+    for(let li of document.querySelectorAll('li')) {
+      li.style.position = 'relative';
+      li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
+      i++;
+    }
+
+    // ...ваш код, который сделает карусель рабочей
+  </script>
     <script src="script.js"></script>
 </body>
 </html>

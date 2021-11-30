@@ -1,16 +1,15 @@
-// События keydown и keyup
-// Событие keydown происходит при нажатии клавиши, а keyup – при отпускании.
-// event.code и event.key
-// Свойство key объекта события позволяет получить символ, а свойство code – «физический код клавиши».
+// События key.keydown и key.keyup
+// Событие key.keydown происходит при нажатии клавиши, а key.keyup – при отпускании.
+// event.code и event.key.key
+// Свойство key.key объекта события позволяет получить символ, а свойство code – «физический код клавиши».
 
-// Свойство event.key – это непосредственно символ, и он может различаться. Но event.code всегда будет тот же:
+// Свойство event.key.key – это непосредственно символ, и он может различаться. Но event.code всегда будет тот же:
 
 // Буквенные клавиши имеют коды по типу "Key<буква>": "KeyA", "KeyB" и т.д.
 // Коды числовых клавиш строятся по принципу: "Digit<число>": "Digit0", "Digit1" и т.д.
 // Код специальных клавиш – это их имя: "Enter", "Backspace", "Tab" и т.д.
 
-document.addEventListener('keydown',function(e){
-    
+document.addEventListener('key.keydown',function(e){
     if(e.code=='KeyZ' && (e.ctrlKey || e.metaKey)){
         console.log('Cancel!')
     }
@@ -18,7 +17,7 @@ document.addEventListener('keydown',function(e){
 })
 
 // Автоповтор
-// При долгом нажатии клавиши возникает автоповтор: keydown срабатывает снова и снова, и когда клавишу отпускают, то отрабатывает keyup. Так что ситуация, когда много keydownи один keyup, абсолютно нормальна.
+// При долгом нажатии клавиши возникает автоповтор: key.keydown срабатывает снова и снова, и когда клавишу отпускают, то отрабатывает key.keyup. Так что ситуация, когда много key.keydownи один key.keyup, абсолютно нормальна.
 
 // Для событий, вызванных автоповтором, у объекта события свойство event.repeat равно true.
 
@@ -35,13 +34,14 @@ document.addEventListener('keydown',function(e){
 // …и так далее.
 
 function checkPhoneKey(key) {
-    console.log(key)
-    return (key >= '0' && key <= '9') || key == '+' || key == '(' || key == ')' || key == '-' || key =='ArrowLeft' ||key=='ArrowRight'||key=='Delete'||key=='Backspace';
+    console.log(key.key)
+    key.repeat = false;
+    return (key.key >= '0' && key.key <= '9') || key.key == '+' || key.key == '(' || key.key == ')' || key.key == '-' || key.key =='ArrowLeft' ||key.key=='ArrowRight'||key.key=='Delete'||key.key=='Backspace';
     
   }
 
 
 function runOnKeys(func,code1,code2,... code_n){
-    if()
+    // if()
 }
 //   document.addEventListener('')
