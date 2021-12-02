@@ -48,10 +48,11 @@
     // Также существует событие window.onscroll.
 
     
-    let newWindow = open('about:blank', 'example', 'width=300,height=300')
-newWindow.opener.test = 123;
-newWindow.addEventListener('DOMContentLoaded', function() {
-this.document.write('<script>alert(window.opener.test);<\/script>');
-});
-setTimeout(() => newWindow.close(), 1000);
-
+    document.body.addEventListener('click',function(e) {
+        let newWindow = open('about:blank', 'example', 'width=300,height=300')
+    newWindow.opener.test = 123;
+    newWindow.addEventListener('DOMContentLoaded', function() {
+    this.document.write('<script>alert(window.opener.test);<\/script>');
+    });
+    setTimeout(() => newWindow.close(), 1000);
+    });
