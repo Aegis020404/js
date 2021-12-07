@@ -1,0 +1,10 @@
+img{
+    position: fixed;
+    bottom: 0;
+    right:0;
+}
+canvas{
+    position: fixed;
+    top: 0;
+    right:0;
+}
