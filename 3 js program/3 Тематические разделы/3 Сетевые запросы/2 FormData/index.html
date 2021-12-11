@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <title>Document</title> -->
 </head>
 <body>
-      
+      <!-- <form action="" id="formElement">
+          <input type="text" name="name" id="" value='john'>
+          <input type="text" name="surname" id="" value='Smith'>
+          <br>
+          <input type="submit" value="submit">
+      </form>
+      <br>
+      <form action="" id="formElem">
+          <input type="text" name="firstname" id="" value="john"> 
+          <input type="file" name="picture" id="" accept="image/*">
+          <br>
+          <input type="submit" value="отправить">
+      </form>
+      <br> -->
 
-    <script src="script.js"></script>
+
+
+        <canvas id="canvasElem" width="100" height="80" style="border:1px solid"></canvas>
+        <input type="button" value="Отправить" onclick="submit()">
+        <a href="#" id='download' >download</a>
+  <script>
+    canvasElem.onmousemove = function(e) {
+        console.log('qw')
+      let ctx = canvasElem.getContext('2d');
+      ctx.lineTo(e.clientX, e.clientY);
+      ctx.stroke();
+    };
+    async function submit() {
+        let imageBlob = await new Promise(resolve => canvasElem.toBlob(resolve,'image/png'))
+        
+        let formData = new FormData();
+        formData.append('firstName', 'John');
+        formData.append('image',imageBlob, 'image.png');
+        download.setAttribute('download','image.png');
+        let response = await fetch ('/', {
+            method:'POST',
+            body: formData
+        });
+        let result = await response.json();
+        console.log(result.message);
+    }
+  </script>
+    <!-- <script src="script.js" type='module'></script> -->
 </body>
 </html>

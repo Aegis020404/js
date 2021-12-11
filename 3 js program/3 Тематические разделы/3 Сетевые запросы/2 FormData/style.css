@@ -1,0 +1,16 @@
+#formElement {
+
+    border-left: 5px green solid;
+    padding-left:4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    glyph-orientation-horizontal: 231grad;
+}
+input {
+    margin: 2px;
+    box-shadow: 1px 1px  rgba(255, 102, 0, 0.5);
+
+    background:linear-gradient(rgb(255, 255, 255),rgba(41, 41, 41, 0.205));
+}
+input[type='submit']:hover {
+    color: red;
+}
