@@ -1,0 +1,1 @@
+{"fact":"Unlike humans, cats cannot detect sweetness which likely explains why they are not drawn to it at all.","length":102}
