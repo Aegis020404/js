@@ -1,0 +1,72 @@
+#color {
+    transition-property: background-color;
+    transition-duration: 3s ;
+}
+
+#growing {
+    transition: font-size .3s, color 2s;
+}
+
+#digit {
+    width: .5em;
+    overflow:hidden;
+    font: 32px monospace; 
+    cursor: pointer;
+}
+
+#stripe {
+    display: inline-block;
+}
+
+#stripe.animate {
+    transform: translate(-90%);
+    transition-property: transform;
+    transition-duration: 9s;;
+    transition-timing-function: linear;
+
+}
+
+
+@keyframes firstanime { /* объявляем имя анимации: "go-left-right" */
+    from {left: 0px;} /* от: left: 0px */
+    to {left:calc(100% - 50px);} /* до: left: 100%-50px */
+}
+
+.progress {
+    animation: firstanime 3s infinite alternate;
+    /* применить анимацию firstanime на элементе
+       продолжительностью 3 секунды
+       количество раз: бесконечно (infinite)
+       менять направление анимации каждый раз (alternate)
+    */
+
+    position:relative;
+    border: 2px solid green;
+    width: 50px;
+    height: 20px;
+    background-color: lime;
+}
+
+
+
+
+#flyjet {
+    width: 40px;
+    /* -> 400px */
+
+    height: 24px;
+    /* -> 240px */
+    transition: width 3s cubic-bezier(0.25, 1.5, 0.75, 1.5), height 3s cubic-bezier(0.25, 1.5, 0.75, 1.5);
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
