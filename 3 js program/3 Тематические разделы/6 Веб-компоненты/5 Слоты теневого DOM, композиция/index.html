@@ -8,8 +8,99 @@
     <title>Document</title>
 </head>
 <body>
+
+    
+    <script>
+        customElements.define('user-card', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.innerHTML = `
+                <div>Имя:
+                <slot name="username"></slot> 
+                </div>
+            <div>Дата Рождения:
+                <slot name='birthday'></slot>
+            </div>
+                `;
+            }   
+        });
+    </script>
+      <user-card>
+          <span slot='birthday'>Иван Иванович</span>
+          <span slot='username'>01.01.2001</span>
+      </user-card>
+
+
+      <template id="tmpl">
+        <style>
+        ul {
+          margin: 0;
+          list-style: none;
+          padding-left: 20px;
+        }
       
+        ::slotted([slot="title"]) {
+          font-size: 18px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      
+        ::slotted([slot="title"])::before {
+          content: '📂';
+          font-size: 14px;
+        }
+      
+        .closed ::slotted([slot="title"])::before {
+          content: '📁';
+        }
+      
+        .closed ul {
+          display: none;
+        }
+        </style>
+      
+        <div class="menu">
+          <slot name="title"></slot>
+          <ul><slot name="item"></slot></ul>
+        </div>
+      </template>
+      <script>
+          customElements.define('custom-menu', class extends HTMLElement {
+              connectedCallback() {
+                  this.attachShadow({mode: 'open'});
+                // tmpl -- шаблон для теневого DOM-дерева (выше)
+                  this.shadowRoot.append(tmpl.content.cloneNode(true));
+
+                // мы не можем выбирать узлы светлого DOM, поэтому обработаем клики на слоте 
+                this.shadowRoot.querySelector('slot[name="title"]').onclick = () => {
+                    // открыть/закрыть меню
+                    this.shadowRoot.querySelector('.menu').classList.toggle('closed');
+                }
+              }
+          })
+      </script>
+
+<custom-menu>
+    <span slot="title">Сладости</span>
+    <li slot="item">Леденцы</li>
+    <li slot="item">Фруктовые тосты</li>
+    <li slot="item">Кексы</li>
+  </custom-menu>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
