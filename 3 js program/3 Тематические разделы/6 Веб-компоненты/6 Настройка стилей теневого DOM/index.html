@@ -8,8 +8,57 @@
     <title>Document</title>
 </head>
 <body>
-      
-
+      <template id='tmpl'>
+          <style>
+            /* Стиль будет применён изнутри к элементу <custom-dialog> */
+            :host {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: inline-block;
+                border:1px solid rgb(151, 119, 119);
+                padding:10px;
+            }
+          </style>
+          <slot></slot>
+      </template>
     <script src="script.js"></script>
+
+    <custom-dialog>
+        Hello!
+    </custom-dialog>
+
+
+
+    <style>
+        span {
+            font-weight: bold;
+        }
+    </style>
+
+    <user-card>
+        <div slot='username'><span>John Victor</span></div>
+    </user-card>
+
+    <script>
+        customElements.define('user-card', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.innerHTML =`
+                <style>
+                span { background: red; }
+                </style>
+                Имя: <slot name="username"></slot>
+                `;
+            }
+        });
+    </script>
+
+
+
+
+
+
 </body>
 </html>
