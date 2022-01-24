@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-      
+    <ul>
+        <li class="open">
+          <div class="icon"></div>
+          <div class="text">Раздел 1
+            <br>В две строки</div>
+          <ul>
+            <li class="closed">
+              <div class="icon"></div>
+              <div class="text">Раздел 1.1 в одну строку</div>
+            </li>
+            <li class="leaf">
+              <div class="icon"></div>
+              <div class="text">Страница 1.2
+                <br> в две строки</div>
+            </li>
+          </ul>
+        </li>
+        <li class="closed">
+          <div class="icon"></div>
+          <div class="text">Раздел 2
+            <br>В две строки</div>
+        </li>
+      </ul>
 
     <script src="script.js"></script>
 </body>

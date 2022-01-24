@@ -1,0 +1,9 @@
+body {
+    font: 14px/1.5 serif;
+  }
+li:not(:last-child):after {
+    content:'';
+    display: block;
+    height: 13px;
+    width: 103px;
+}
